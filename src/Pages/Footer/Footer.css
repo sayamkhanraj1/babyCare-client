@@ -1,0 +1,18 @@
+.footer-menu {
+         list-style: none;
+         margin-top: 20px;
+         font-size: 16px;
+         cursor: pointer;
+}
+.footer-input {
+         padding: 8px;
+         border: none;
+         outline: none;
+         
+}
+.footer-container {
+         background-color: rgb(38, 35, 57);
+         padding: 50px;
+         color: rgb(216, 209, 209);
+         background-image: url(../../images/footer-banner.jpg)
+ }     

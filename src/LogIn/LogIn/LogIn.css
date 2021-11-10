@@ -1,0 +1,32 @@
+.login-section{
+         background-color: #ddd;
+         font-family: "Quicksand",sans-serif;
+}
+.login-form {
+         padding:30px 70px;
+         border-radius: 20px;
+         box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+         background-color: #ddd;
+         color: black;
+         border-radius: 12px;
+}
+.sing-in{
+         display: inline-block;
+         padding: 8px 22px;
+         background-color: #f5692e;
+         font-weight: 600;
+         font-size: 20px;
+         color: #fff;
+         border: 0;
+         border-radius: 5px;
+}
+.googleSingIN{
+         display: inline-block;
+         padding: 8px 22px;
+         background-color: #4269DB;
+         font-weight: 600;
+         font-size: 20px;
+         color: #fff;
+         border: 0;
+         border-radius: 5px;
+}

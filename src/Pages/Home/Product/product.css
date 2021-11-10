@@ -1,0 +1,59 @@
+.service-btn{
+         display: inline-block;
+         padding: 8px 15px;
+         background-color: #fc82bd;
+         font-weight: 600;
+         font-size: 20px;
+         color: #fff;
+         border: 0;
+         border-radius: 5px;
+}
+
+.package-detail{
+         font-weight: 700;
+         font-size: 15px;
+         color: #fc82bd;
+}
+
+.package-text h3{
+         color: #fc82bd;
+         font-weight: bold;
+         font-size: 23px;
+
+}
+.star{
+         color: #f5692e;
+}
+.card-style{
+         box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+         background-color: #fff;
+         color: black;
+         border-radius: 12px;
+}
+
+.img-effect{
+         overflow: hidden;
+}
+
+.img-effect img{
+         transition:  1.5s ;
+}
+
+.img-effect:hover img{
+         transform: scale(1.5);
+}
+
+.proucts-text h5, h4{
+         margin-bottom: 15px;
+         font-size: 20px;
+         color: #fc82bd;
+         font-family: "Quicksand",sans-serif;
+         font-weight: 700;
+         text-align: center;
+     }
+.products-text h2{
+         font-size: 44px;
+         color: #fc82bd;
+         font-family: "Quicksand",sans-serif;
+         font-weight: 700;
+     }
