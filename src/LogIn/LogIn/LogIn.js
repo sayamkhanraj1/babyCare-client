@@ -91,7 +91,7 @@ const Login = () => {
                      <form onSubmit={handleRegistration}>
                      <div className="login-body d-flex justify-content-center align-items-center">
                         <div className=" login-form my-5">
-                        <h2 className="mb-4 fw-bold fs-2">{isLogIn ? "LogIn" : "Registration"}</h2>
+                        <h2 className="mb-4 fw-bold fs-2 text-white">{isLogIn ? "LogIn" : "Registration"}</h2>
                         {!isLogIn && <div className="form-floating mb-3">
                         <input onBlur={handleNameChange} className="form-control" placeholder="nameexample" required/>
                         <label htmlFor="floatingInput">Your Name</label>
@@ -106,11 +106,15 @@ const Login = () => {
                         </div>
                         <div className="form-check">
                         <input onChange={toggleLogIn} className="me-2" type="checkbox" id="gridCheck1"/>
-                        <label className="form-check-label mt-3 fw-bold" htmlFor="gridCheck1">Already Registered ?</label>
+                        <label className="form-check-label mt-3 fw-bold text-white" htmlFor="gridCheck1">Already Registered ?</label>
                         </div>
                         <div className="row mb-3 text-danger">{error}</div>
-                        <button className="sing-in">{isLogIn ? "Sing In" : "Sing Up"}</button><br />
+                       <div className ="d-flex justify-content-center align-items-center">
+                       <div>
+                       <button className="sing-in">{isLogIn ? "Sing In" : "Sing Up"}</button><br />
                         <button onClick={handleGoogleLogIn} className="googleSingIN mt-3">Google Sing In</button>
+                       </div>
+                       </div>
                         </div> 
                         </div>
                         </form>

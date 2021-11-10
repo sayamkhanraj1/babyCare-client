@@ -1,7 +1,7 @@
 .service-btn{
          display: inline-block;
          padding: 8px 15px;
-         background-color: #fc82bd;
+         background-color: #fc479e;
          font-weight: 600;
          font-size: 20px;
          color: #fff;
@@ -12,11 +12,11 @@
 .package-detail{
          font-weight: 700;
          font-size: 15px;
-         color: #fc82bd;
+         color: #fc479e;
 }
 
 .package-text h3{
-         color: #fc82bd;
+         color: #fc479e;
          font-weight: bold;
          font-size: 23px;
 
@@ -46,14 +46,14 @@
 .proucts-text h5, h4{
          margin-bottom: 15px;
          font-size: 20px;
-         color: #fc82bd;
+         color: #fc479e;
          font-family: "Quicksand",sans-serif;
          font-weight: 700;
          text-align: center;
      }
-.products-text h2{
+.products-text{
          font-size: 44px;
-         color: #fc82bd;
+         color: #69bff1;
          font-family: "Quicksand",sans-serif;
          font-weight: 700;
      }

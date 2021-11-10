@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Product from '../Product/Product';
+import fetureImg from '../../../images/heading_img.png'
 
 const Products = () => {
          const [products, setProducts] = useState([]);
@@ -13,10 +14,10 @@ const Products = () => {
          },[])
          return (
                   <div>
-                  <div className="container my-5">
-                  <div className="proucts-text">
-                  <h5>Choose Your Product</h5>
-                  <h2 className="text-center fw-bold">Select Your Best <br /> Product For Your Car</h2>
+                  <div className="container my-5 ">
+                  <h2 className="text-center fw-bold products-text">Featured Products</h2>
+                  <div className="d-flex justify-content-center align-items-center my-3">
+                  <img src={fetureImg} alt="" />
                   </div>
                   <div className="row">
                   {

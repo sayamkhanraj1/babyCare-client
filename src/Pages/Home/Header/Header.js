@@ -21,18 +21,18 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-end">
                         <Nav className="ms-auto">
-                            <NavLink className="text-decoration-none text-secondary fs-6 ms-4 fw-bold" to="/home">Home</NavLink>
-                            <NavLink className="text-decoration-none text-secondary fs-6 ms-4 fw-bold" to="/moreProducts">More Products</NavLink>
-                            <NavLink className="text-decoration-none text-secondary fs-6 ms-4 fw-bold" to="/deals">Review</NavLink>
-                            <NavLink className="text-decoration-none text-secondary fs-6 ms-3 fw-bold" to="/rewards">Dashbord</NavLink>
+                            <NavLink className="text-decoration-none header-text fs-6 ms-4 fw-bold" to="/home">Home</NavLink>
+                            <NavLink className="text-decoration-none header-text fs-6 ms-4 fw-bold" to="/moreProducts">More Products</NavLink>
+                            <NavLink className="text-decoration-none header-text fs-6 ms-4 fw-bold" to="/deals">Review</NavLink>
+                            <NavLink className="text-decoration-none header-text fs-6 ms-3 fw-bold" to="/rewards">Dashbord</NavLink>
                             {
-                                user.email && <span className="text-secondary fw-bold ms-4 me-1">{user.displayName}</span>
+                                user.email && <span className="fw-bold ms-4 me-1 header-text">{user.displayName}</span>
                             }
                             {
                                 user.email?
                                 <NavLink onClick={logOut} className="text-decoration-none text-white fs-6 ms-3 fw-bold btn btn-danger btn-sm" to="/login"><i className="fas fa-sign-in-alt me-2 text-white"></i>LogOut</NavLink>
                                 :
-                                <NavLink className="text-decoration-none text-white fs-6 ms-3 fw-bold btn btn-success btn-sm" to="/login"><i className="fas fa-sign-in-alt me-2 text-white"></i>Sign In</NavLink>
+                                <NavLink className="text-decoration-none text-white fs-6 ms-3 fw-bold btn service-btn btn-sm" to="/login"><i className="fas fa-sign-in-alt me-2 text-white "></i>Sign In</NavLink>
                             }
                         </Nav>
                     </Navbar.Collapse>

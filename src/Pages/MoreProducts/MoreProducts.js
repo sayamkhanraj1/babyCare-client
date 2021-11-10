@@ -16,7 +16,7 @@ const MoreProducts = () => {
                   <div className="container my-5">
                   <div className="proucts-text">
                   <h5>Find Out More Products</h5>
-                  <h2 className="text-center fw-bold">Find Out More <br /> Products For Your Car</h2>
+                  <h2 className="text-center fw-bold products-text">Find Out More <br /> Products For Your Baby</h2>
                   </div>
                   <div className="row">
                   {

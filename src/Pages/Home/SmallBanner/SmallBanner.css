@@ -1,0 +1,12 @@
+.small-banner-text h1{
+    font-weight: bold;
+    color: #fc82bd;
+}
+.small-banner-text h2{
+    font-weight: normal;
+    color: #69bff1;
+    font-size: 36px;
+}
+.banner-container{
+         border: 8px solid #fc82bd;
+}

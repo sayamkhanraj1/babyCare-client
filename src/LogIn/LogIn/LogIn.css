@@ -1,12 +1,12 @@
 .login-section{
-         background-color: #ddd;
+         background-color: #fc59a8;
          font-family: "Quicksand",sans-serif;
 }
 .login-form {
          padding:30px 70px;
          border-radius: 20px;
          box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-         background-color: #ddd;
+         background-color: #f373b1;
          color: black;
          border-radius: 12px;
 }

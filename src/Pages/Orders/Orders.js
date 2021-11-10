@@ -6,14 +6,16 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../Hooks/useAuth';
+import { useHistory } from 'react-router-dom';
 import './Orders.css'
-import { Link } from 'react-router-dom';
 
 const Orders = () => {
 
          let {orders} = useParams();
          const {user} = useAuth();
-
+         const history = useHistory();
+         const redirect_uri = '/myBooking';
+         
          const [Orders, setOrders] = useState([]);
          const [singleOrder, setSingleOrder] = useState({});
 
@@ -30,14 +32,24 @@ const Orders = () => {
                   const foundBooking = Orders.find(booking => (booking.key == orders))
                   setSingleOrder(foundBooking)
                   
-         },[Orders])
+         },[Orders, orders])
 
          // react hook form
          const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
-         const onSubmit = data => {
-           console.log(data)
-           reset();
-        };
+         const onSubmit = (data) => {
+          data.status= "Pending";
+          fetch('https://blooming-ocean-16338.herokuapp.com/bookingTour', {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+          })
+            .then((res) => res.json())
+            .then((result) =>{
+                alert("Booked Successfully!");
+                reset();
+                history.push(redirect_uri);
+          });
+      };
 
          console.log(watch("example")); 
 
@@ -56,12 +68,6 @@ const Orders = () => {
                       <h5 className="fw-bold text-secondary mb-2">Price: {singleOrder?.price}</h5>
                       <h6 className="fw-bold text-secondary"><span className="star">{starIcon}</span> {singleOrder?.rating}</h6>
                       <p className="fw-bold text-secondary my-3">{singleOrder?.discription}</p>
-                    </div>
-                    
-                    <div className="d-flex justify-content-center align-items-center">
-                     <Link>
-                     <button className="service-btn mb-3 btn">Panding</button>
-                     </Link>
                     </div>
                   </div>
                  </div>

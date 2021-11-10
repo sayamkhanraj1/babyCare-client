@@ -8,6 +8,7 @@ import Login from './LogIn/LogIn/LogIn';
 import Footer from './Pages/Footer/Footer';
 import MoreProducts from './Pages/MoreProducts/MoreProducts';
 import Orders from './Pages/Orders/Orders';
+import PrivateRoute from './privetRoute/privetRoute';
 
 function App() {
   return (
@@ -28,9 +29,9 @@ function App() {
           <Route exact path="/moreProducts">
             <MoreProducts />
           </Route>
-          <Route exact path="/orders/:orders">
+          <PrivateRoute exact path="/orders/:orders">
              <Orders />
-          </Route>
+          </PrivateRoute>
         </Switch>
         <Footer />
     </Router> 

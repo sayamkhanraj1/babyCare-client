@@ -4,15 +4,11 @@
          font-size: 16px;
          cursor: pointer;
 }
-.footer-input {
-         padding: 8px;
-         border: none;
-         outline: none;
-         
-}
 .footer-container {
-         background-color: rgb(38, 35, 57);
+         background-color: rgba(134, 37, 84, 0.9);
          padding: 50px;
-         color: rgb(216, 209, 209);
-         background-image: url(../../images/footer-banner.jpg)
+         color: white;
+ }     
+.footer-container h4{
+         color: white;
  }     
