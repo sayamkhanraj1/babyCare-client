@@ -14,8 +14,8 @@ const Orders = () => {
          let {orders} = useParams();
          const {user} = useAuth();
          const history = useHistory();
-         const redirect_uri = '/myBooking';
-         
+         const redirect_uri = '/';
+
          const [Orders, setOrders] = useState([]);
          const [singleOrder, setSingleOrder] = useState({});
 
@@ -23,7 +23,7 @@ const Orders = () => {
          const starIcon = <FontAwesomeIcon icon={faStar} />
 
          useEffect(()=>{
-                  fetch('/products.json')
+                  fetch('http://localhost:5000/products')
                   .then(res => res.json())
                   .then(data => setOrders(data))
          },[])
@@ -38,17 +38,18 @@ const Orders = () => {
          const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
          const onSubmit = (data) => {
           data.status= "Pending";
-          fetch('https://blooming-ocean-16338.herokuapp.com/bookingTour', {
+          fetch('http://localhost:5000/ordersInfo', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
           })
             .then((res) => res.json())
             .then((result) =>{
-                alert("Booked Successfully!");
+                alert("Ordered Successfully!");
                 reset();
                 history.push(redirect_uri);
           });
+          console.log(data);
       };
 
          console.log(watch("example")); 
@@ -73,16 +74,50 @@ const Orders = () => {
                  </div>
 
                   <div className="col-md-6 mt-4 mb-3">
-                  <form className="order-form " onSubmit={handleSubmit(onSubmit)}>
-                  <input defaultValue={user.displayName} {...register("name")} />
-                  <input defaultValue={user.email} {...register("email")} />
-                  <input placeholder="Address" {...register("address", { required: true })} />
-                  <input placeholder="City" {...register("city", { required: true })} />
-                  <input type="number" placeholder="Phone Number" {...register("number", { required: true })} />
-                  {errors.exampleRequired && <span>This field is required</span>}
-                  
-                  <input className="fw-bolder fs-5" type="submit" />
-                  </form>
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                                {
+                                   singleOrder?.name &&  <input
+                                   {...register("title")}
+                                   defaultValue={singleOrder?.name}
+                                   placeholder="Title"
+                                   className="p-3 m-3 w-100 border border-success rounded"
+                                   />
+                                }
+                               <br />
+                               <input
+                                {...register("name")}
+                                defaultValue={user.displayName}
+                                placeholder="Name"
+                                className="p-3 m-3 w-100 border border-success rounded"
+                                />
+                               <br />
+                               <input
+                                {...register("email")}
+                                defaultValue={user.email}
+                                placeholder="Email"
+                                className="p-3 m-3 w-100 border border-success rounded"
+                                />
+                               <br />
+                               <input
+                               {...register("date", { required: true })}
+                               type="date"
+                               className="p-3 m-3 w-100 border border-success rounded"
+                               />
+                                <br/>
+                               <select {...register("gender")} className="p-3 m-3 w-100 border border-success rounded">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                              <br/>
+                              <input
+                              {...register("city", { required: true })}
+                              placeholder="City"
+                              className="p-3 m-3 w-100 border border-success rounded"
+                              />
+                              <br />
+                              {errors.exampleRequired && <span>This field is required</span>}
+                              <input type="submit" value="Confirm Booking" className="btn btn-success w-100 border border-success rounded m-3" />
+                            </form>
                   </div>
 
                   </div>

@@ -18,11 +18,11 @@ const Footer = () => {
               <div>
                        <h4>QUICK MENU</h4>
                 <ul>
-                  <li className="footer-menu">Emission And Exhaust</li>
-                  <li className="footer-menu">Body And Wipers</li>
-                  <li className="footer-menu">Cooling And Heating</li>
-                  <li className="footer-menu">Electronics And Navigation</li>
-                  <li className="footer-menu">Engines And Ignition</li>
+                  <li className="footer-menu">Winter Collection</li>
+                  <li className="footer-menu">Baby Care</li>
+                  <li className="footer-menu">Featured Products</li>
+                  <li className="footer-menu">Testimonials</li>
+                  <li className="footer-menu">Recent Blogs</li>
                 </ul>
               </div>
             </div>

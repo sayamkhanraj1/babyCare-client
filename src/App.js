@@ -3,19 +3,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import AuthProvider from './contexts/AuthProvider';
-import Header from './Pages/Home/Header/Header';
 import Login from './LogIn/LogIn/LogIn';
-import Footer from './Pages/Footer/Footer';
 import MoreProducts from './Pages/MoreProducts/MoreProducts';
 import Orders from './Pages/Orders/Orders';
 import PrivateRoute from './privetRoute/privetRoute';
+import MyOrders from './DashBord/MyOrders/MyOrders';
+import AllOrders from './DashBord/AllOrders/AllOrders';
+import DashBord from './DashBord/DashBord/DashBord';
+import Header from './Pages/Home/Header/Header';
+import Error from './Error/Error';
+import MakeAdmin from './DashBord/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
     <div>
       <AuthProvider>
       <Router>
-        <Header />
+      <Header />
       <Switch>
           <Route exact path="/">
             <Home />
@@ -26,14 +30,29 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
+          <Route exact path="/aaa">
+            <MakeAdmin />
+          </Route>
           <Route exact path="/moreProducts">
             <MoreProducts />
           </Route>
           <PrivateRoute exact path="/orders/:orders">
              <Orders />
           </PrivateRoute>
+          {/* <PrivateRoute exact path="/MyOrders">
+             <MyOrders />
+          </PrivateRoute>
+          <PrivateRoute exact path="/allorders">
+             <AllOrders />
+          </PrivateRoute> */}
+          <PrivateRoute path="/dashbord">
+             <DashBord />
+          </PrivateRoute>
+          <Route exact path="*">
+             <Error />
+          </Route>
         </Switch>
-        <Footer />
+        
     </Router> 
       </AuthProvider>
     </div>

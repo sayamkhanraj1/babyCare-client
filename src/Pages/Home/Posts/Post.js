@@ -12,7 +12,7 @@ const Post = () => {
          const tagIcon = <FontAwesomeIcon icon={faTag} />
 
          useEffect(()=>{
-                  fetch('/posts.json')
+                  fetch('http://localhost:5000/posts')
                   .then(res => res.json())
                   .then(data => setPosts(data))
          },[])

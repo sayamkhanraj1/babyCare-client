@@ -7,6 +7,11 @@
     color: #69bff1;
     font-size: 36px;
 }
-.banner-container{
-         border: 8px solid #fc82bd;
+.banner-img img{
+    width: 550px;
+    
 }
+.ban-container{
+    overflow-x: hidden;
+}
+    

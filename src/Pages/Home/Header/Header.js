@@ -23,8 +23,10 @@ const Header = () => {
                         <Nav className="ms-auto">
                             <NavLink className="text-decoration-none header-text fs-6 ms-4 fw-bold" to="/home">Home</NavLink>
                             <NavLink className="text-decoration-none header-text fs-6 ms-4 fw-bold" to="/moreProducts">More Products</NavLink>
-                            <NavLink className="text-decoration-none header-text fs-6 ms-4 fw-bold" to="/deals">Review</NavLink>
-                            <NavLink className="text-decoration-none header-text fs-6 ms-3 fw-bold" to="/rewards">Dashbord</NavLink>
+                            
+                            {
+                                user.email && <NavLink className="text-decoration-none header-text fs-6 ms-3 fw-bold" to="/dashbord">Dashbord</NavLink>
+                            }
                             {
                                 user.email && <span className="fw-bold ms-4 me-1 header-text">{user.displayName}</span>
                             }

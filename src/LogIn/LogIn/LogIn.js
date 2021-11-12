@@ -13,6 +13,7 @@ const Login = () => {
         const [password, setPassword] = useState('');
         const [error, setError] = useState('');
         const [isLogIn, setIsLogIn] = useState(false);
+        const [user, setUser] = useState('');
 
         const {singInIUseingGoogle} = useAuth();
         const auth = getAuth();
@@ -65,12 +66,17 @@ const Login = () => {
                 .then(result =>{
                         history.push(redirect_uri);
                         setError('');
+                        const newUser = {email, displayName: name};
+                        setUser(newUser);
+                        // save user to the database
+                        saveUser(email, name)
                         setUserName();
                 })
                 .catch((error) =>{
                         console.log(error.message);
                 });   
         }
+
 
         const setUserName = () =>{
                 updateProfile(auth.currentUser, {displayName: name})
@@ -85,6 +91,17 @@ const Login = () => {
                         history.push(redirect_uri);
                })
         }
+       
+        const saveUser = (email, displayName) =>{
+                const users = {email, displayName}
+                fetch('http://localhost:5000/users', {
+                        method: 'POST',
+                        headers: { "content-type": "application/json" },
+                        body: JSON.stringify(users)
+                })
+                .then()
+        }
+        
 
          return (
                   <div className="login-section">

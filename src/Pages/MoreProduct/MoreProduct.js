@@ -16,8 +16,8 @@ const MoreProduct = (props) => {
         return (
                   <div className="col-md-4 mt-4 mb-3">
                  <div className="card h-100 card-style">
-                   <div className=" img-effect"> 
-                     <img className="img-fluid" src={img} alt="..."/>
+                   <div className="img-effect d-flex justify-content-center align-items-center"> 
+                     <img className="w-75" src={img} alt="..."/>
                      </div>
                     <div className="mt-3 package-detail d-flex justify-content-around">
                     </div>

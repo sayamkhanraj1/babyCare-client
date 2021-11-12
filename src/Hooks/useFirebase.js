@@ -7,6 +7,7 @@ initializeAuthentication()
 const useFirebase = () =>{
          const [user, setUser] = useState ({});
          const [isLoading, setIsloading] = useState(true);
+         const [admin, setAdmin] = useState(false);
          
          const auth = getAuth();
 
@@ -14,9 +15,24 @@ const useFirebase = () =>{
                 setIsloading(true)
                   const googleProvider = new GoogleAuthProvider();
                   return signInWithPopup(auth, googleProvider)
-                  
+                  .then(result => {
+                         const user = result.user;
+                         saveUser(user.email, user.displayName)
+                  }).catch(error => {
+
+                  })
                   .finally(() => setIsloading(false));
          };
+
+         const saveUser = (email, displayName) =>{
+              const users = {email, displayName}
+              fetch('http://localhost:5000/users', {
+                      method: 'PUT',
+                      headers: { "content-type": "application/json" },
+                      body: JSON.stringify(users)
+              })
+              .then()
+      }
 
          useEffect(()=>{
                 const unsubscribed =  onAuthStateChanged(auth, user =>{
@@ -29,7 +45,7 @@ const useFirebase = () =>{
                            setIsloading(false);
                   });
                   return () => unsubscribed;
-         }, [])
+         }, []);
 
          const logOut = () =>{
                 setIsloading(true)
@@ -39,8 +55,17 @@ const useFirebase = () =>{
                   ;
          }
 
+         useEffect(()=>{
+                fetch(`http://localhost:5000/users/${user.email}`)
+                .then(res => res.json())
+                .then(data => setAdmin(data.admin))
+         }, [user.email])
+
+         
+
          return {
                   user,
+                  admin,
                   isLoading,
                   singInIUseingGoogle,
                   logOut

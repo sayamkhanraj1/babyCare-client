@@ -5,10 +5,10 @@ import './SmallBanner.css';
 
 const SmallBanner = () => {
          return (
-                  <div className="row mx-5 my-5 ">
+                  <div className="row mx-5 my-5 ban-container">
                   <div className="card mb-3 col-md-6 banner-container  border-0">
                   <div className="row g-0">
-                  <div className="col-md-4">
+                  <div className="col-md-4 banner-img">
                   <img src={smallBanner} alt="..."/>
                   </div>
                   <div className="col-md-8 d-flex justify-content-end align-items-center">
@@ -23,7 +23,7 @@ const SmallBanner = () => {
 
                   <div className="card mb-3 col-md-6  border-0 banner-container">
                   <div className="row g-0">
-                  <div className="col-md-4">
+                  <div className="col-md-4 banner-img">
                   <img src={smallBanner2} alt="..."/>
                   </div>
                   <div className="col-md-8 d-flex justify-content-end align-items-center">
