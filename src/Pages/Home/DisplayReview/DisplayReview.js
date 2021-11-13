@@ -14,14 +14,13 @@ const DisplayReview = () => {
                   <div>
                   <div className="container my-5">
                   <div className="proucts-text">
-                  <h2 className="text-center fw-bold products-text mb-3">Reviews</h2>
+                  <h2 className="text-center fw-bold products-text mb-5">Reviews</h2>
                   </div>
                   <div className="row">
                   {
                            reviews.map(review => 
-                                    <div class="col-md-4">
-                                    <div class="col">
-                                    <div class="card h-100">
+                                    <div class="col-md-4 mb-3">
+                                    <div class="card h-100 card-style">
                                     <div class="card-body">
                                     <h3 class="card-title header-text text-center mb-3">{review?.name}</h3>
                                     <div className="d-flex justify-content-center align-items-center"><Rating
@@ -33,7 +32,7 @@ const DisplayReview = () => {
                                     <p class="card-tex mt-3">{review?.discription}</p>
                                     </div>
                                     </div>
-                                    </div>
+                              
                                    </div>
 
                             )
