@@ -17,7 +17,7 @@ const ManageAllProduct = () => {
     const handleDelete = id =>{
         const confirm = window.confirm('Are you sure to delete Order?');
         if(confirm){
-            fetch(`https://calm-mountain-67432.herokuapp.com/${id}`, {
+            fetch(`https://calm-mountain-67432.herokuapp.com/products/${id}`, {
                method:'DELETE'
             })
             .then(res=>res.json())

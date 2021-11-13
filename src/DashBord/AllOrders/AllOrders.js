@@ -16,7 +16,7 @@ const AllOrders = () => {
 
 
     const handleUpdate = id =>{
-        fetch(`https://calm-mountain-67432.herokuapp.com/${id}`, {
+        fetch(`https://calm-mountain-67432.herokuapp.com/ordersInfo/${id}`, {
             method: 'PUT',
             headers: { "content-type": "application/json" },
             body: JSON.stringify(user),
