@@ -9,14 +9,14 @@ const AllOrders = () => {
     const {user} = useAuth();
 
     useEffect(() => {
-        fetch('http://localhost:5000/ordersInfo')
+        fetch('https://calm-mountain-67432.herokuapp.com/ordersInfo')
        .then(res => res.json())
        .then(result => setOrder(result));
      }, [order]);
 
 
     const handleUpdate = id =>{
-        fetch(`http://localhost:5000/ordersInfo/${id}`, {
+        fetch(`https://calm-mountain-67432.herokuapp.com/${id}`, {
             method: 'PUT',
             headers: { "content-type": "application/json" },
             body: JSON.stringify(user),
@@ -33,7 +33,7 @@ const AllOrders = () => {
     const handleDelete = id =>{
         const confirm = window.confirm('Are you sure to delete Order?');
         if(confirm){
-            fetch(`http://localhost:5000/ordersInfo/${id}`, {
+            fetch(`https://calm-mountain-67432.herokuapp.com/ordersInfo/${id}`, {
                method:'DELETE'
             })
             .then(res=>res.json())

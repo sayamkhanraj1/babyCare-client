@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import fetureImg from '../../../images/heading_img.png'
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTag} from '@fortawesome/free-solid-svg-icons';
 
@@ -12,7 +11,7 @@ const Post = () => {
          const tagIcon = <FontAwesomeIcon icon={faTag} />
 
          useEffect(()=>{
-                  fetch('http://localhost:5000/posts')
+                  fetch('https://calm-mountain-67432.herokuapp.com/posts')
                   .then(res => res.json())
                   .then(data => setPosts(data))
          },[])

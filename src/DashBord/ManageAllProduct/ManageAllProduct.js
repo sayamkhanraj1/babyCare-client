@@ -8,7 +8,7 @@ const ManageAllProduct = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://calm-mountain-67432.herokuapp.com/products')
        .then(res => res.json())
        .then(result => setAllProducts(result));
      }, [allProducts]);
@@ -17,7 +17,7 @@ const ManageAllProduct = () => {
     const handleDelete = id =>{
         const confirm = window.confirm('Are you sure to delete Order?');
         if(confirm){
-            fetch(`http://localhost:5000/products/${id}`, {
+            fetch(`https://calm-mountain-67432.herokuapp.com/${id}`, {
                method:'DELETE'
             })
             .then(res=>res.json())

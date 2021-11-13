@@ -94,7 +94,7 @@ const Login = () => {
        
         const saveUser = (email, displayName) =>{
                 const users = {email, displayName}
-                fetch('http://localhost:5000/users', {
+                fetch('https://calm-mountain-67432.herokuapp.com/users', {
                         method: 'POST',
                         headers: { "content-type": "application/json" },
                         body: JSON.stringify(users)

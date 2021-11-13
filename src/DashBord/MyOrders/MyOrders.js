@@ -8,7 +8,7 @@ const MyOrder = () => {
     const {user} = useAuth({});
 
     useEffect(() => {
-       fetch(`http://localhost:5000/ordersInfo/${user?.email}`)
+       fetch(`https://calm-mountain-67432.herokuapp.com/${user?.email}`)
       .then(res => res.json())
       .then(result => setMyOrders(result));
     }, [user.email]);
@@ -16,7 +16,7 @@ const MyOrder = () => {
     const handleDelete = id=>{
         const confirm = window.confirm('Are you sure to delete booking?');
         if(confirm){
-            fetch(`http://localhost:5000/ordersInfo/${id}`, {
+            fetch(`https://calm-mountain-67432.herokuapp.com/ordersInfo/${id}`, {
                method:'DELETE'
             })
             .then(res=>res.json())

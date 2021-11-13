@@ -26,7 +26,7 @@ const useFirebase = () =>{
 
          const saveUser = (email, displayName) =>{
               const users = {email, displayName}
-              fetch('http://localhost:5000/users', {
+              fetch('https://calm-mountain-67432.herokuapp.com/users', {
                       method: 'PUT',
                       headers: { "content-type": "application/json" },
                       body: JSON.stringify(users)
@@ -45,7 +45,7 @@ const useFirebase = () =>{
                            setIsloading(false);
                   });
                   return () => unsubscribed;
-         }, []);
+         }, [auth]);
 
          const logOut = () =>{
                 setIsloading(true)
@@ -56,7 +56,7 @@ const useFirebase = () =>{
          }
 
          useEffect(()=>{
-                fetch(`http://localhost:5000/users/${user.email}`)
+                fetch(`https://calm-mountain-67432.herokuapp.com/users/${user.email}`)
                 .then(res => res.json())
                 .then(data => setAdmin(data.admin))
          }, [user.email])

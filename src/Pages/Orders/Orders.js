@@ -23,7 +23,7 @@ const Orders = () => {
          const starIcon = <FontAwesomeIcon icon={faStar} />
 
          useEffect(()=>{
-                  fetch('http://localhost:5000/products')
+                  fetch('https://calm-mountain-67432.herokuapp.com/products')
                   .then(res => res.json())
                   .then(data => setOrders(data))
          },[])
@@ -38,7 +38,7 @@ const Orders = () => {
          const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
          const onSubmit = (data) => {
           data.status= "Pending";
-          fetch('http://localhost:5000/ordersInfo', {
+          fetch('https://calm-mountain-67432.herokuapp.com/ordersInfo', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

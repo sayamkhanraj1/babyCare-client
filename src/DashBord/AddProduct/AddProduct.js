@@ -7,7 +7,7 @@ const AddProduct = () => {
 
          const onSubmit = data => {
                   console.log(data)
-                  fetch('http://localhost:5000/addProduct',{
+                  fetch('https://calm-mountain-67432.herokuapp.com/addProduct',{
                            method:"POST",
                            headers:{'content-Type' : 'application/json'},
                            body: JSON.stringify(data)
