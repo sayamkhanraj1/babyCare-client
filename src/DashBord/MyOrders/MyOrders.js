@@ -8,7 +8,7 @@ const MyOrder = () => {
     const {user} = useAuth({});
 
     useEffect(() => {
-       fetch(`https://calm-mountain-67432.herokuapp.com/${user?.email}`)
+       fetch(`https://calm-mountain-67432.herokuapp.com/ordersInfo/${user?.email}`)
       .then(res => res.json())
       .then(result => setMyOrders(result));
     }, [user.email]);
