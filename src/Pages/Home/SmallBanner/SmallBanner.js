@@ -1,12 +1,12 @@
 import React from 'react';
-import smallBanner from '../../../images/small-banner/small-banner.jpg';
 import smallBanner2 from '../../../images/small-banner/small-banner 2.jpg';
+import smallBanner from '../../../images/small-banner/small-banner.jpg';
 import './SmallBanner.css';
 
 const SmallBanner = () => {
          return (
                   <div className="row mx-5 my-5 ban-container">
-                  <div className="card mb-3 col-md-6 banner-container  border-0">
+                  <div data-aos="zoom-out-right" className="card mb-3 col-md-6 banner-container  border-0">
                   <div className="row g-0">
                   <div className="col-md-4 banner-img">
                   <img src={smallBanner} alt="..."/>
@@ -21,7 +21,7 @@ const SmallBanner = () => {
                   </div>
                   </div>
 
-                  <div className="card mb-3 col-md-6  border-0 banner-container">
+                  <div data-aos="zoom-out-left" className="card mb-3 col-md-6  border-0 banner-container">
                   <div className="row g-0">
                   <div className="col-md-4 banner-img">
                   <img src={smallBanner2} alt="..."/>

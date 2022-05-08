@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import './DisplayReview.css';
 
@@ -11,7 +11,8 @@ const DisplayReview = () => {
                   .then(data => setReviews(data))
          },[])
          return (
-                  <div>
+                  <div data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-center">
                   <div className="container my-5">
                   <div className="proucts-text">
                   <h2 className="text-center fw-bold products-text mb-5">Reviews</h2>

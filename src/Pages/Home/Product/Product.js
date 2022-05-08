@@ -1,8 +1,8 @@
+import { faCartArrowDown, faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { faCartArrowDown, faStar} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
-import './product.css'
+import './product.css';
 
 const product = (props) => {
 
@@ -29,7 +29,9 @@ const product = (props) => {
 //         }
 
         return (
-                  <div className="col-md-4 mt-4 mb-3">
+                  <div data-aos="fade-down"
+                  data-aos-easing="linear"
+                  data-aos-duration="1500" className="col-md-4 mt-4 mb-3">
                  <div className="card h-100 card-style">
                    <div className=" img-effect d-flex justify-content-center align-items-center"> 
                      <img className="w-75" src={img} alt="..."/>

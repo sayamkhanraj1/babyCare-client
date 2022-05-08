@@ -1,9 +1,7 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import fetureImg from '../../../images/heading_img.png'
+import { faTag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faTag} from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useState } from 'react';
+import fetureImg from '../../../images/heading_img.png';
 
 const Post = () => {
          const [posts, setPosts] = useState([]);
@@ -16,7 +14,8 @@ const Post = () => {
                   .then(data => setPosts(data))
          },[])
          return (
-                  <div>
+                  <div data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom">
                   <div className="container my-5 ">
                   <h2 className="text-center fw-bold products-text">Our Recent Posts</h2>
                   <div className="d-flex justify-content-center align-items-center my-3">
