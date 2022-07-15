@@ -7,8 +7,6 @@ import Login from './LogIn/LogIn/LogIn';
 import MoreProducts from './Pages/MoreProducts/MoreProducts';
 import Orders from './Pages/Orders/Orders';
 import PrivateRoute from './privetRoute/privetRoute';
-import MyOrders from './DashBord/MyOrders/MyOrders';
-import AllOrders from './DashBord/AllOrders/AllOrders';
 import DashBord from './DashBord/DashBord/DashBord';
 import Header from './Pages/Home/Header/Header';
 import Error from './Error/Error';
