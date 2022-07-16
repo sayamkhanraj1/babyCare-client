@@ -1,17 +1,22 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import Product from '../Product/Product';
 import fetureImg from '../../../images/heading_img.png'
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProducts } from './productsSlice';
 
 const Products = () => {
-         const [products, setProducts] = useState([]);
+         /* const [products, setProducts] = useState([]); */
+
+         // from redux
+         const {products} = useSelector(state => state.products)
+         const dispatch = useDispatch();
 
          useEffect(()=>{
-                  fetch('https://calm-mountain-67432.herokuapp.com/products')
-                  .then(res => res.json())
-                  .then(data => setProducts(data))
-         },[])
+                  dispatch(fetchProducts());
+         },[dispatch])
+
+
          return (
                   <div>
                   <div className="container my-5 ">
