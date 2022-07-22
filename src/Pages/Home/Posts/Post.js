@@ -1,18 +1,20 @@
 import { faTag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import fetureImg from '../../../images/heading_img.png';
+import { fetchPosts } from './postSlice';
 
 const Post = () => {
-         const [posts, setPosts] = useState([]);
 
          const tagIcon = <FontAwesomeIcon icon={faTag} />
 
+         const {posts} = useSelector(state => state.posts)
+         const dispatch = useDispatch();
+
          useEffect(()=>{
-                  fetch('https://calm-mountain-67432.herokuapp.com/posts')
-                  .then(res => res.json())
-                  .then(data => setPosts(data))
-         },[])
+                  dispatch(fetchPosts())
+         },[dispatch])
          return (
                   <div data-aos="fade-up"
                   data-aos-anchor-placement="top-bottom">
